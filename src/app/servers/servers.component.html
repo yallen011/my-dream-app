@@ -1,0 +1,25 @@
+<label>Sever Name</label>
+<!--event binding-->
+<!--uncomment the below code to see the user input from this field
+automatically get updated in the input field below since the seconde
+input uses two binding-->
+<!--
+<input
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"/>-->
+
+<!-- two-way binding -->
+<!--anything entered into this field will automatically update the <p> element
+below-->
+<input
+type="text"
+class="form-control"
+[(ngModel)]="serverName"/>
+
+<p>{{serverName}}</p>
+<button class="btn btn-primary"
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">Add Server</button>
+<p>{{serverCreationStatus}}</p>
+<app-server></app-server>
